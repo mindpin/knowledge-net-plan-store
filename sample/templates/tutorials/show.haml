@@ -1,0 +1,6 @@
+%h1 教程: #{@tutorial.name}
+= form @tutorial
+
+%a{:href => "/topics/#{@tutorial.topic_id}"} 返回
+%a.remove{:href => "/tutorials/#{@tutorial.id}"} [删除]
+

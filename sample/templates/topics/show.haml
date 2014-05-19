@@ -1,0 +1,15 @@
+%h1 主题: #{@topic.name}
+= form @topic
+
+%a{:href => "/plans/#{@topic.plan_id}"} 返回
+%a{:href => "/topics/#{@topic.id}/tutorials/new"} 添加新教程
+%a.remove{:href => "/topics/#{@topic.id}"} [删除]
+
+- if @tutorials.any?
+  %h2 现有教程
+  %ul
+    - @tutorials.each do |tutorial|
+      %li
+        %a{:href => "/tutorials/#{tutorial.id}"}= tutorial.name
+        %a.remove{:href => "/tutorials/#{tutorial.id}"} [删除]
+      

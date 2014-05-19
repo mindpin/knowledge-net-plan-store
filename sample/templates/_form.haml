@@ -1,0 +1,13 @@
+- parent_id = parent && model.send(parent)
+
+%form{:action => action, :method => :post}
+  %input{:type => :hidden, :name => :_method, :value => method}
+
+  - if parent_id
+    %input{:type => :hidden, :name => "#{model_name}[#{parent}]", :value => parent_id}
+
+  %input{:type => :text, :name => "#{model_name}[name]", :placeholder => :name, :value => model.name}
+
+  %input{:type => :text, :name => "#{model_name}[desc]", :placeholder => :desc, :value => model.desc}
+
+  %input{:type => :submit, :name => :submit, :value => :"提交"}

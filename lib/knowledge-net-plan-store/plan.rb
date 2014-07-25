@@ -4,18 +4,18 @@ module KnowledgeNetPlanStore
     include Mongoid::Document
     include Mongoid::Timestamps
 
-    field :name, :type => String
+    field :title, :type => String
     field :desc, :type => String
 
     has_many :topics
 
-    validates :name, :presence => true
+    validates :title, :presence => true
 
     def attrs
       {
         :id     => self.id.to_s,
         :desc   => self.desc,
-        :name   => self.name,
+        :title  => self.title,
         :topics => self.topics.map(&:attrs)
       }
     end

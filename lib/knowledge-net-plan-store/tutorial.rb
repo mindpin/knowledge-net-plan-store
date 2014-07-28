@@ -3,6 +3,7 @@ module KnowledgeNetPlanStore
     include Serializer
     include Mongoid::Document
     include Mongoid::Timestamps
+    include ActsAsDag
 
     field :title, :type => String
     field :desc, :type => String

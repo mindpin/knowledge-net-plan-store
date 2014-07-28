@@ -1,5 +1,6 @@
 require "json"
 require "mongoid"
+require "acts-as-dag"
 require "knowledge-net-plan-store/version"
 require "knowledge-net-plan-store/serializer"
 require "knowledge-net-plan-store/plan"

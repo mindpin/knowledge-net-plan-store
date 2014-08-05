@@ -3,11 +3,11 @@ module KnowledgeNetPlanStore
     def self.included(base)
       base.send :has_many,
                 :plans,
-                :class_name => Plan.to_s
+                :class_name => Plan.name
 
       Plan.send :belongs_to,
-                base.to_s.split("::").first.downcase,
-                :class_name => base.to_s
+                base.class_name.element,
+                :class_name => base.name
     end
   end
 end

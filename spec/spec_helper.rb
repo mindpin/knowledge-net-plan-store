@@ -7,7 +7,7 @@ Mongoid.load!("./sample/config/mongoid.yml")
 
 class User
   include Mongoid::Document
-  include KnowledgeNetPlanStore::User
+  include KnowledgeNetPlanStore::HasManyLearnRecords
 end
 
 RSpec.configure do |config|

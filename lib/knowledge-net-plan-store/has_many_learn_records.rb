@@ -1,5 +1,5 @@
 module KnowledgeNetPlanStore
-  module User
+  module HasManyLearnRecords
     def self.included(base)
       base.has_many :learn_records,
                     :class_name => LearnRecord.name

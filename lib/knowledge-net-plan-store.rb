@@ -10,7 +10,7 @@ require "knowledge-net-plan-store/topic"
 require "knowledge-net-plan-store/tutorial"
 require "knowledge-net-plan-store/learn_record"
 require "knowledge-net-plan-store/has_many_plans"
-require "knowledge-net-plan-store/user"
+require "knowledge-net-plan-store/has_many_learn_records"
 
 module KnowledgeNetPlanStore
 end

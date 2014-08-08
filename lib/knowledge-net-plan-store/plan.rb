@@ -11,15 +11,19 @@ module KnowledgeNetPlanStore
 
     validates :title, :presence => true
 
-    def attrs
+    def attrs(shallow: true)
       {
-        :id     => self.id.to_s,
-        :desc   => self.desc,
-        :title  => self.title,
-        :topics => self.topics.map(&:attrs),
+        :id         => self.id.to_s,
+        :desc       => self.desc,
+        :title      => self.title,
         :created_at => self.created_at.to_s,
         :updated_at => self.updated_at.to_s
-      }
+      }.merge(shallow ?
+              {:topic_ids => self.topic_ids.map(&:to_s)} :
+              {:topics    => self.topics.map {|t| t.attrs(shallow: false)}})
+       .merge(respond_to?(:net_id) ?
+              {:net_id => self.net_id.to_s} :
+              {})
     end
   end
 end

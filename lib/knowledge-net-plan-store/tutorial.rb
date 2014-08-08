@@ -36,9 +36,10 @@ module KnowledgeNetPlanStore
 
     def attrs
       hash = {
-        :id   => self.id.to_s,
-        :desc => self.desc,
-        :title => self.title,
+        :id         => self.id.to_s,
+        :desc       => self.desc,
+        :title      => self.title,
+        :topic_id   => self.topic_id.to_s,
         :created_at => self.created_at.to_s,
         :updated_at => self.updated_at.to_s
       }

@@ -5,7 +5,9 @@ module KnowledgeNetPlanStore
     include Mongoid::Timestamps
 
     field :title, :type => String
-    field :desc, :type => String
+    field :desc,  :type => String
+
+    mount_uploader :image, Uploader
 
     has_many   :tutorials
     belongs_to :plan

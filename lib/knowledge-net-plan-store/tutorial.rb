@@ -8,6 +8,8 @@ module KnowledgeNetPlanStore
     field :title, :type => String
     field :desc,  :type => String
 
+    mount_uploader :image, Uploader
+
     has_many :learn_records
     belongs_to :topic
 

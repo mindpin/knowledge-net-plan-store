@@ -19,6 +19,7 @@ module KnowledgeNetPlanStore
         :id         => self.id.to_s,
         :desc       => self.desc,
         :title      => self.title,
+        :image      => self.image.url,
         :plan_id    => self.plan_id.to_s,
         :created_at => self.created_at.to_s,
         :updated_at => self.updated_at.to_s

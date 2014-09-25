@@ -9,7 +9,7 @@ module KnowledgeNetPlanStore
 
     mount_uploader :image, Uploader
 
-    has_many   :tutorials
+    has_many   :tutorials, :dependent => :destroy
     belongs_to :plan
 
     validates :title, :presence => true

@@ -7,7 +7,7 @@ module KnowledgeNetPlanStore
     field :title, :type => String
     field :desc, :type => String
 
-    has_many :topics
+    has_many :topics, :dependent => :destroy
 
     validates :title, :presence => true
 

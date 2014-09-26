@@ -5,8 +5,11 @@ module KnowledgeNetPlanStore
     include Mongoid::Timestamps
     include ActsAsDag
 
-    field :title, :type => String
-    field :desc,  :type => String
+    field :title,     :type => String
+    field :desc,      :type => String
+    field :published, :type => Boolean
+
+    scope :published, proc {where(:published => true)}
 
     mount_uploader :image, Uploader
 

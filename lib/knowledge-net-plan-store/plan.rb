@@ -16,8 +16,8 @@ module KnowledgeNetPlanStore
         :id         => self.id.to_s,
         :desc       => self.desc,
         :title      => self.title,
-        :created_at => self.created_at.to_s,
-        :updated_at => self.updated_at.to_s
+        :created_at => self.created_at,
+        :updated_at => self.updated_at
       }.merge(shallow ?
               {:topic_ids => self.topic_ids.map(&:to_s)} :
               {:topics    => self.topics.map {|t| t.attrs(shallow: false)}})
